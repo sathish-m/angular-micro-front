@@ -11,3 +11,6 @@ $theme-accent: mat-palette($mat-accent, 500, 500, 500);
 $theme-tritary: mat-palette($mat-tritary, 500, 500, 500);
 $theme: mat-light-theme($theme-primary, $theme-accent, $theme-tritary);
 @include angular-material-theme($theme);
+pre{
+    background-color: #EBECE4; 
+} 

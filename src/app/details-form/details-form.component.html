@@ -1,19 +1,21 @@
 <div class="container">
+
   <div class="row">
+
 <form class="details-form" #detailsForm="ngForm">
   <div class="details-form__top">
-    Details form
+    Microservices Architecture Demo
   </div>
-  <mat-form-field class="details-form__form-field" hintLabel="min 3, Max 25 characters." >
-    <mat-label class="details-form__form-field__label">First name</mat-label>
+  <!-- <mat-form-field class="details-form__form-field" hintLabel="min 3, Max 25 characters." >
+    <mat-label class="details-form__form-field__label">Name</mat-label>
     <input class="details-form__form-field__input" matInput placeholder="please enter first name" [(ngModel)]="person.firstName" name="firstName" minlength="3" maxlength="25" required
     #firstName='ngModel' >
     <mat-error *ngIf="firstName.hasError">
-     First name is not valid
+     Name is not valid
     </mat-error>
-  </mat-form-field>
+  </mat-form-field> -->
 
-  <mat-form-field class="details-form__form-field" hintLabel="min 3, Max 25 characters." >
+  <!-- <mat-form-field class="details-form__form-field" hintLabel="min 3, Max 25 characters." >
     <mat-label class="details-form__form-field__label">Last name</mat-label>
     <input class="details-form__form-field__input" matInput placeholder="please enter last name" [(ngModel)]="person.lastName" name="lastName" minlength="3" maxlength="25" required
     #lastName='ngModel'>
@@ -37,16 +39,18 @@
       <mat-radio-button value="Neutral">Neutral</mat-radio-button>
       <mat-radio-button value="NotProvided">Prefer not to say</mat-radio-button>
     </mat-radio-group>
-  </div>
-  <mat-form-field class="details-form__form-field">
-    <mat-label class="details-form__form-field__label">Address</mat-label>
-    <textarea  class="details-form__form-field__input" matInput placeholder="please enter address" value="" [(ngModel)]="person.Address" name="address"></textarea>
-  </mat-form-field>
-  <div class="details-form__form-field">
+  </div>-->
+
+  <!-- <div class="details-form__form-field">
     <mat-checkbox ngModel name="consented" [(ngModel)]="person.consented" required   #consentedCheck='ngModel'>I consent to disclose my personal information</mat-checkbox>
-  </div>
-  <button class="details-form__submit" mat-flat-button color="accent" (click)="onDetailsFormSubmit()">Save details</button>
+  </div> -->
+  <button class="details-form__submit" mat-flat-button color="accent" (click)="getGamingDetails()">Get the Gaming Trends</button>
+  <!-- <mat-form-field class="details-form__form-field">
+    <mat-label class="details-form__form-field__label">Response</mat-label>
+    <textarea  class="details-form__form-field__input" matInput placeholder="please enter address" value="" [(ngModel)]="response" name="response"></textarea>
+  </mat-form-field> -->
 </form>
+<pre style="background-color: #EBECE4;">{{response | json}}</pre>
 </div>
 </div>
 

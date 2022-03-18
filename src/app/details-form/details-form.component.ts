@@ -15,6 +15,7 @@ export class DetailsFormComponent implements OnInit {
 
   person: Person = new Person();
   ages: number[] = [];
+  response: string;
 
   ngOnInit() {
     // populating age array with 1 to 100
@@ -47,7 +48,35 @@ export class DetailsFormComponent implements OnInit {
         duration: 3000,
       });
     }
-  }
+  };
 
+  getGamingDetails(){
+    this.dataService
+    .getGamingTrends()
+    .subscribe(JSON => {
+      this.response = JSON;
+      console.log('postUserDetails has been successful:', JSON);
+
+        // let message = person.firstName + ' ' + person.lastName + ' details has been saved successfully';
+        // this._snackBar.openFromComponent(NotificationComponent, {
+        //   data: {
+        //     message: message,
+        //     success: true
+        //   },
+        //   duration: 3000,
+        // });
+      });
+      error => {
+        console.log ('postUserDetails post failed: ', error)
+        // let message = 'Save details has failed';
+        // this._snackBar.openFromComponent(NotificationComponent, {
+        //   data: {
+        //     message: message,
+        //     success: false
+        //   },
+        //   duration: 3000,
+        // });
+      }
+  }
 
 }
